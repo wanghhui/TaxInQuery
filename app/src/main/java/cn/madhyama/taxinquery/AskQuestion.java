@@ -2,11 +2,13 @@ package cn.madhyama.taxinquery;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -237,6 +239,9 @@ public class AskQuestion extends AppCompatActivity {
                                 showTip(getString(R.string.text_begin));
                             }
                         }
+                        Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                        // Vibrate for 500 milliseconds
+                        vibrator.vibrate(500);
 
 
                         //mAsk.setBackgroundResource(R.drawable.button_zcyj_press);

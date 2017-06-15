@@ -196,7 +196,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="语音提问"
+                        android:text="按住说话"
                         android:textColor="@android:color/background_light"
                         android:textSize="32dp" />
                 </LinearLayout>
