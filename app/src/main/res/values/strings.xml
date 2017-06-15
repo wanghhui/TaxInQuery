@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">TaxInQuery</string>
+    <string name="app_id">58d0c0fd</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+    <string name="title_activity_welcome">税务云知音</string>
+
+    <string name="title_activity_ask_question">AskQuestion</string>
+
+    <string name="title_activity_post_answer">PostAnswer</string>
+
+    <string name="title_activity_question_suggestion">QuestionSuggestion</string>
+
+    <!-- 语言 -->
+    <string-array name="language_entries">
+        <item>普通话</item>
+        <item>粤语</item>
+        <item>英语</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>mandarin</item>
+        <item>cantonese</item>
+        <item>en_us</item>
+    </string-array>
+    <!-- 标点符号 -->
+    <string-array name="punc_entries">
+        <item>有标点</item>
+        <item>无标点</item>
+    </string-array>
+    <string-array name="punc_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string
+            name="tts_toast_format"
+            formatted="false">缓冲进度为%d%%，播放进度为%d%%
+    </string>
+    <string-array name="stream_entries">
+        <item>通话</item>
+        <item>系统</item>
+        <item>铃声</item>
+        <item>音乐</item>
+        <item>闹铃</item>
+        <item>通知</item>
+    </string-array>
+    <string-array name="stream_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string name="text_begin">请开始说话&#8230;</string>
+    <string name="text_begin_recognizer">开始音频流识别</string>
+    <string name="text_upload_contacts">上传联系人</string>
+    <string name="text_upload_userwords">上传用户词表</string>
+    <string name="text_upload_success">上传成功</string>
+    <string name="text_userword_empty">词表下载失败或内容为空</string>
+    <string name="text_download_success">下载成功</string>
+    <string name="pref_key_iat_show">iat_show</string>
+    <string name="pref_title_iat_show">显示听写界面</string>
+    <string name="MatchingQuestions">根据您的提问，下列这些问题内容相关度最高：</string>
+    <string name="MatchingNull">没有任何匹配结果，要不点一下人工作答吧</string>
+    <string name="pleaseInput">请用拼音或手写方式输入问题</string>
+    <string name="answerIs">您问的问题答案是：</string>
+    <string name="writeDownQuestion">写下问题</string>
+</resources>

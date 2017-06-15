@@ -1,0 +1,138 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/bkgrd_blue"
+             tools:context="cn.madhyama.taxinquery.MatchSpeech">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fullscreen_content_ms">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" android:gravity="bottom">
+            <EditText
+                    android:text="SpeechText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/speechText" android:layout_weight="1"
+                    android:ellipsize="none"
+                    android:scrollHorizontally="false"
+                    android:textSize="@android:dimen/notification_large_icon_width"
+                    android:textColor="@android:color/background_light"
+                    android:nextFocusUp="@id/speechText"
+                    android:nextFocusLeft="@id/speechText"
+                    android:inputType="textMultiLine"
+                    android:background="@drawable/bggrd_query_noarrow"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/separator"
+                    android:id="@+id/imageView4"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="@string/MatchingQuestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/resultHint" android:textSize="25sp"
+                    android:paddingBottom="10dp" android:elevation="1dp"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="780dp">
+            <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/qlist" android:background="@drawable/bkgrd_suggestion"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="3" android:gravity="bottom">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:gravity="bottom">
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" app:srcCompat="@drawable/separator"
+                        android:id="@+id/imageView12" android:padding="20dp" android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp" android:gravity="bottom|center_horizontal" android:paddingBottom="7dp">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_weight="1"
+                        android:gravity="center_vertical" android:paddingLeft="30dp">
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" app:srcCompat="@drawable/icon_askagain"
+                            android:id="@+id/askagain" android:background="#00000000"/>
+                    <TextView
+                            android:text="语音提问"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textAskAgain"
+                            android:layout_weight="1" android:textColor="@android:color/background_light"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_weight="1"
+                        android:gravity="center_vertical" android:paddingLeft="30dp">
+
+                    <ImageButton
+                        android:id="@+id/suggestion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        app:srcCompat="@drawable/icon_manual" />
+                    <TextView
+                            android:text="人工作答"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textSuggestion"
+                            android:layout_weight="1" android:textColor="@android:color/background_light"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_weight="1"
+                        android:gravity="center_vertical" android:paddingLeft="30dp">
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" app:srcCompat="@drawable/icon_leave"
+                            android:id="@+id/mainpage" android:background="#00000000"/>
+                    <TextView
+                            android:text="退出系统"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textMainpage"
+                            android:layout_weight="1" android:textColor="@android:color/background_light"
+                            android:textSize="28dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
