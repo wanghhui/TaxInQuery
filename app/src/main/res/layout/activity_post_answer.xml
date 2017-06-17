@@ -40,7 +40,7 @@
             android:paddingRight="30dp">
 
             <Button
-                android:id="@+id/sound"
+                android:id="@+id/mute"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/volumeon" />

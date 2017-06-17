@@ -168,6 +168,9 @@ public class AskQuestion extends AppCompatActivity {
         mKeyIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                // Vibrate for 200 milliseconds
+                vibrator.vibrate(200);
                 go2questionListNullString();
             }
         });
@@ -240,8 +243,8 @@ public class AskQuestion extends AppCompatActivity {
                             }
                         }
                         Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-                        // Vibrate for 500 milliseconds
-                        vibrator.vibrate(500);
+                        // Vibrate for 200 milliseconds
+                        vibrator.vibrate(200);
 
 
                         //mAsk.setBackgroundResource(R.drawable.button_zcyj_press);

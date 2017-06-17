@@ -2,6 +2,7 @@ package cn.madhyama.taxinquery;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -9,6 +10,7 @@ import net.sqlcipher.database.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -64,6 +66,8 @@ public class PostAnswer extends AppCompatActivity {
     private int mPercentForBuffering = 0;
     //播放进度
     private int mPercentForPlaying = 0;
+
+    private static boolean mute=false;
     /**
      * 初始化监听。
      */
@@ -205,6 +209,8 @@ public class PostAnswer extends AppCompatActivity {
             });
 
 
+
+
         } else {
             question.setText(intent.getStringExtra("question"));
             answer.setText(intent.getStringExtra("answer"));
@@ -216,7 +222,34 @@ public class PostAnswer extends AppCompatActivity {
         // 初始化合成对象
         mTts = SpeechSynthesizer.createSynthesizer(this, mTtsInitListener);
         setTTSParam();
-        mTts.startSpeaking(answer.getText().toString(), mTtsListener);
+
+        final Button buttonMute = (Button)findViewById(R.id.mute);
+        if(mute){
+            buttonMute.setBackgroundResource(R.drawable.volumeoff);
+        }
+        else {
+            mTts.startSpeaking(answer.getText().toString(), mTtsListener);
+            buttonMute.setBackgroundResource(R.drawable.volumeon);
+        }
+        buttonMute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                // Vibrate for 200 milliseconds
+                vibrator.vibrate(200);
+                mute = !mute;
+                if(mute){
+
+                    buttonMute.setBackgroundResource(R.drawable.volumeoff);
+                    if(mTts.isSpeaking())mTts.stopSpeaking();
+                }
+                else {
+                    buttonMute.setBackgroundResource(R.drawable.volumeon);
+                    mTts.startSpeaking(answer.getText().toString(), mTtsListener);
+                }
+
+            }
+        });
 
         mSharedPreferences = getSharedPreferences(TtsSettings.PREFER_NAME, Activity.MODE_PRIVATE);
         mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
@@ -269,6 +302,7 @@ public class PostAnswer extends AppCompatActivity {
                 go2page(AskQuestion.class);
             }
         });
+
 
 
     }
