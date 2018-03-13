@@ -3,10 +3,10 @@
           package="cn.madhyama.taxinquery">
 
     <application
+        android:name=".TaxInQuery"
             android:allowBackup="true"
             android:icon="@mipmap/icon"
             android:label="@string/app_name"
-            android:name=".TaxInQuery"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
     >
@@ -14,15 +14,15 @@
                 android:name=".MatchSpeech"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_fullscreen"
-                android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".Welcome"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_welcome"
-                android:theme="@style/AppTheme.NoActionBar"
-                android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -33,22 +33,22 @@
                 android:name=".AskQuestion"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_ask_question"
-                android:theme="@style/AppTheme.NoActionBar"
-                android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".PostAnswer"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_post_answer"
-                android:theme="@style/AppTheme.NoActionBar"
-                android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".QuestionSuggestion"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/title_activity_question_suggestion"
-                android:theme="@style/AppTheme.NoActionBar"
-                android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
@@ -62,5 +62,9 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
 </manifest>

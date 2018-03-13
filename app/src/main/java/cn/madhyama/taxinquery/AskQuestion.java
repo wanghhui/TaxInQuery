@@ -15,15 +15,23 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
-import cn.madhyama.util.IatSettings;
-import com.iflytek.cloud.*;
+
+import com.iflytek.cloud.ErrorCode;
+import com.iflytek.cloud.InitListener;
+import com.iflytek.cloud.RecognizerListener;
+import com.iflytek.cloud.RecognizerResult;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
+import com.iflytek.cloud.SpeechRecognizer;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+
+import cn.madhyama.util.IatSettings;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -57,6 +65,7 @@ public class AskQuestion extends AppCompatActivity {
         }
     };
     private Button mAsk;
+    private TextView title;
     private Toast mToast;
     // 语音听写对象
     private SpeechRecognizer mIat;
@@ -66,6 +75,7 @@ public class AskQuestion extends AppCompatActivity {
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
     private String result = "";
     private SharedPreferences mSharedPreferences;
+    private String username;
     /**
      * 初始化语音听写监听器。
      */
@@ -152,6 +162,14 @@ public class AskQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_question);
         mContentView = findViewById(R.id.fullscreen_content);
+
+        Intent intent = getIntent();
+        username = intent.getStringExtra("name");
+
+        if (username != null) {
+            title = (TextView) findViewById(R.id.titleWithName);
+            title.setText(username + "您好，");
+        }
 
         // 初始化识别无UI识别对象
         // 使用SpeechRecognizer对象，可根据回调消息自定义界面；
